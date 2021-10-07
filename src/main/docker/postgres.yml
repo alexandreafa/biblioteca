@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: "biblioteca"
+      POSTGRES_PASSWORD: "biblioteca"
+      POSTGRES_HOST_AUTH_METHOD: trust
+#      POSTGRES_DB: "biblioteca"
+    ports:
+      - "5433:5432"
+    volumes:
+      - ~/Dev/docker-compose-biblioteca/postgres/PostgreSQL:/var/lib/postgresql/data
