@@ -1,5 +1,6 @@
 package com.alexandreafa.biblioteca.domain;
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -38,4 +39,5 @@ public class Obra implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "autor_id")
     )
     Set<Autor> autoresObra;
+
 }
