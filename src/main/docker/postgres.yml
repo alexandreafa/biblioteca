@@ -3,6 +3,7 @@ version: '3'
 services:
   db:
     image: postgres
+    container_name: biblioteca-postgres
     environment:
       POSTGRES_USER: "biblioteca"
       POSTGRES_PASSWORD: "biblioteca"
