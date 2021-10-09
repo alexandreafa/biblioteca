@@ -1,7 +1,7 @@
 package com.alexandreafa.biblioteca.service;
 
 import com.alexandreafa.biblioteca.domain.Obra;
-import com.alexandreafa.biblioteca.exception.ObraNotFoundException;
+import com.alexandreafa.biblioteca.exception.EntityNotFoundException;
 import com.alexandreafa.biblioteca.repo.ObraRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,7 +30,7 @@ public class ObraService {
 
     public Obra findObraById(Long id) {
         return obraRepository.findObraById(id)
-                .orElseThrow(() -> new ObraNotFoundException("Obra by id " + id + " was not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Obra by id " + id + " was not found"));
     }
 
     @Transactional
