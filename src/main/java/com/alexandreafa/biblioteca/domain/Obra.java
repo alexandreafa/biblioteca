@@ -2,7 +2,9 @@ package com.alexandreafa.biblioteca.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 
 import javax.persistence.CascadeType;
@@ -15,10 +17,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Data
+@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Obra implements Serializable {
 
     @Id
@@ -38,6 +42,6 @@ public class Obra implements Serializable {
             joinColumns = @JoinColumn(name = "obra_id"),
             inverseJoinColumns = @JoinColumn(name = "autor_id")
     )
-    Set<Autor> autoresObra;
+    List<Autor> autoresObra;
 
 }
