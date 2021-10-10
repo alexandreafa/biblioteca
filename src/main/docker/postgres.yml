@@ -8,7 +8,7 @@ services:
       POSTGRES_USER: "biblioteca"
       POSTGRES_PASSWORD: "biblioteca"
       POSTGRES_HOST_AUTH_METHOD: trust
-#      POSTGRES_DB: "biblioteca"
+      POSTGRES_DB: "biblioteca"
     ports:
       - "5433:5432"
     volumes:
